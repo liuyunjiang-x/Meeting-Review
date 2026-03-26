@@ -1,115 +1,88 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>课题组会总览 | Meeting Review</title>
-  <meta name="description" content="课题组组会记录网站：首页总览、每次组会记录、下次会前回顾。">
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>课题组组会记录 | 协同版</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body data-page="home">
   <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <div class="brand-mark">MR</div>
-        <div class="brand-text">
-          <h1>课题组组会记录</h1>
-          <p>Meeting Review · 清晰记录 · 会前回顾 · 持续推进</p>
-        </div>
-      </div>
-      <nav class="nav">
-        <a class="active" href="index.html">首页总览</a>
-        <a href="meetings.html">Meetings</a>
-        <a href="review.html">Review</a>
-      </nav>
+    <div class="brand">MR</div>
+    <div>
+      <h1>课题组组会记录</h1>
+      <p class="tagline">多人共同在线同步编辑版</p>
+    </div>
+    <div class="auth-box" id="authBox">
+      <button id="loginBtn" class="btn primary">Google 登录</button>
+      <button id="logoutBtn" class="btn ghost hidden">退出</button>
+      <div id="userInfo" class="user-info">未登录</div>
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-panel">
-          <span class="eyebrow">组会协作主页</span>
-          <h2>把组会记录、重点回顾和推进节奏放在同一个网页里</h2>
-          <p class="lead">
-            这个页面用于展示课题组会的整体情况。你可以从这里快速进入每次组会记录页面，
-            也可以在会前进入回顾页面，先核对上次讨论结论，再对照本周进展开展新一轮讨论。
-          </p>
-          <div class="button-row">
-            <a class="btn btn-primary" href="meetings.html">查看组会记录</a>
-            <a class="btn btn-secondary" href="review.html">进入会前回顾</a>
-          </div>
-        </div>
+  <nav class="top-nav">
+    <a href="index.html" class="active">首页总览</a>
+    <a href="meetings.html">Meetings</a>
+    <a href="review.html">Review</a>
+  </nav>
 
-        <div class="hero-panel">
-          <div class="stats-grid">
-            <div class="stat-card">
-              <div class="label">站点用途</div>
-              <div class="value">组会总览</div>
-              <div class="hint">统一查看记录、回顾与本周重点</div>
-            </div>
-            <div class="stat-card">
-              <div class="label">协作方式</div>
-              <div class="value">多人编辑</div>
-              <div class="hint">适合课题组成员共同维护内容</div>
-            </div>
-            <div class="stat-card">
-              <div class="label">组会成员</div>
-              <div class="value">5 位</div>
-              <div class="hint">闫章存老师、田毅、石泱、唐石磊、刘芸江</div>
-            </div>
-            <div class="stat-card">
-              <div class="label">当前建议</div>
-              <div class="value">每周更新</div>
-              <div class="hint">会后记录，会前回顾</div>
-            </div>
-          </div>
+  <main class="container">
+    <section class="hero card">
+      <div>
+        <span class="badge">Cloud Sync</span>
+        <h2>把组会记录、会前回顾和任务推进放到同一个可协作网页里</h2>
+        <p>
+          现在这套版本不再是仅本地保存，而是基于云端数据库同步。课题组成员登录后，可以在 Meetings 和 Review 页面中新增、编辑、删除内容，并实时同步给其他成员。
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="meetings.html">进入 Meetings</a>
+          <a class="btn secondary" href="review.html">进入 Review</a>
+        </div>
+      </div>
+      <div class="hero-panel">
+        <div class="metric">
+          <strong>组会成员</strong>
+          <span>5 位</span>
+          <small>闫章存老师、田毅、石泱、唐石磊、刘芸江</small>
+        </div>
+        <div class="metric">
+          <strong>协作方式</strong>
+          <span>在线同步</span>
+          <small>多人编辑，共享同一份数据</small>
+        </div>
+        <div class="metric">
+          <strong>适用场景</strong>
+          <span>每周组会</span>
+          <small>会后记录、会前回顾、任务跟踪</small>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="section-title">
-          <div>
-            <h3>页面功能概览</h3>
-            <p>用更清晰的分区，帮助你快速找到本次需要查看的内容。</p>
-          </div>
-        </div>
+    <section class="grid-3">
+      <article class="card info-card">
+        <h3>首页总览</h3>
+        <p>展示站点用途、导航入口和协作说明，作为课题组统一入口。</p>
+      </article>
+      <article class="card info-card">
+        <h3>Meetings 页面</h3>
+        <p>记录每次组会的时间、主题、讨论内容、结论和下一步任务，支持在线增删改。</p>
+      </article>
+      <article class="card info-card">
+        <h3>Review 页面</h3>
+        <p>用于会前回顾，支持任务状态、优先级和负责人管理，适合持续推进。</p>
+      </article>
+    </section>
 
-        <div class="grid-3">
-          <div class="card quick-card">
-            <div class="icon-dot"></div>
-            <h4>首页总览</h4>
-            <p>集中展示网站用途、页面导航、近期提醒和使用方式，适合作为课题组统一入口。</p>
-          </div>
-          <div class="card quick-card">
-            <div class="icon-dot"></div>
-            <h4>Meetings 页面</h4>
-            <p>记录每次组会的讨论主题、重点内容、结论和下一步任务，形成连续的过程档案。</p>
-          </div>
-          <div class="card quick-card">
-            <div class="icon-dot"></div>
-            <h4>Review 页面</h4>
-            <p>在下次组会前快速回顾上次要点，检查任务落实情况，明确本次会议的重点讨论方向。</p>
-          </div>
-        </div>
-      </div>
+    <section class="card tips">
+      <h3>使用说明</h3>
+      <ol>
+        <li>先完成 Firebase 配置，把 <code>firebase-config.js</code> 中的占位内容替换为你的项目配置。</li>
+        <li>组会成员使用 Google 账号登录后，即可在 Meetings 和 Review 页面共同维护内容。</li>
+        <li>所有更改会实时同步到云端数据库，其他成员刷新或保持在线即可看到更新。</li>
+      </ol>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container card footer-panel">
-      <div>
-        <strong>课题组组会记录</strong>
-        <div class="small">用于记录组会内容和会前回顾</div>
-      </div>
-      <div class="small">
-        当前站点结构：<span class="highlight">首页总览</span> ·
-        <span class="highlight">Meetings</span> ·
-        <span class="highlight">Review</span>
-      </div>
-    </div>
-  </footer>
+  <script type="module" src="app.js"></script>
 </body>
 </html>

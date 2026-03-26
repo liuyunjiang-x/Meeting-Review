@@ -1,0 +1,26 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isAllowedEditor() {
+      return request.auth != null
+        && request.auth.token.email in [
+          'example1@gmail.com',
+          'example2@gmail.com'
+        ];
+    }
+
+    match /meetings/{docId} {
+      allow read: if signedIn();
+      allow create, update, delete: if isAllowedEditor();
+    }
+
+    match /reviews/{docId} {
+      allow read: if signedIn();
+      allow create, update, delete: if isAllowedEditor();
+    }
+  }
+}
